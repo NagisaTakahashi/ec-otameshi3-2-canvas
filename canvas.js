@@ -71,36 +71,33 @@ imgA_1.onload = function(){
   ];
 
   var images = [];
-
   for (var i in srcs) {
     images[i] = new Image();
     images[i].src = srcs[i];
   }
 
   var loadedCount = 1;
-
   for (var i in images) {
     images[i].addEventListener('load', function() {
-      
       if (loadedCount == images.length) {
-
         for (var j in images) {
           ctxB.drawImage(images[j], 0, 0, 346, 570);
         }
-
-        const imageData = ctxB.getImageData(0, 0, 346, 570);
-        ctxC.putImageData(imageData, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
       }
 
-      loadedCount++;
+      // canvasBの内容をクローンしてcanvasCに表示する
+      const imageData = ctxB.getImageData(0, 0, 346, 570);
+      ctxC.putImageData(imageData, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
-      //洋服に対して色を乗算してカラーリング
-      
+      // canvasCで洋服に対して色を乗算してカラーリング
       ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
       ctxC.fillRect(0,0,346,570);
       ctxC.globalCompositeOperation = "source-atop"
 
-    }, false);
+      //ここまでカウントしたら描写？
+      loadedCount++;
+
+    }, false); //addEventListenerのストップ？
   }                   
 }
 )();
