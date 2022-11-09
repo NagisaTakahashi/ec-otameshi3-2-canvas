@@ -61,46 +61,93 @@ imgA_1.onload = function(){
 // 2.canvasB+C B=洋服表示（のデザイン決定側）C=塗りレイヤー用
 // 読み込み時差がなくレイヤー順序を固定するために読み込み後に描画するシナリオに
 
-(function() {
 
-  var srcs = [ //本当はここに選択されたデザインが変数で入るようにする
-    'img/RC-N014/eri_V-07.png',
-    'img/RC-N014/kata_SH-01_set-in.png',
-    'img/RC-N014/kirikae_Just.png',
-    'img/RC-N014/sode_short-cuffs.png',
-  ];
 
-  var images = [];
-  for (var i in srcs) {
-    images[i] = new Image();
-    images[i].src = srcs[i];
-  }
+//読み込みたい画像のパスの配列
 
-  var loadedCount = 1;
-  for (var i in images) {
-    images[i].addEventListener('load', function() {
-      if (loadedCount == images.length) {
-        for (var j in images) {
-          ctxB.drawImage(images[j], 0, 0, 346, 570);
-        }
-      }
+var srcs = [ //本当はここに選択されたデザインが変数で入るようにする
+  'img/RC-N014/eri_V-07.png',
+  'img/RC-N014/kata_SH-01_set-in.png',
+  'img/RC-N014/kirikae_Just.png',
+  'img/RC-N014/sode_short-cuffs.png',
+];
 
-      // canvasBの内容をクローンしてcanvasCに表示する
-      const imageData = ctxB.getImageData(0, 0, 346, 570);
-      ctxC.putImageData(imageData, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
+// ロード済Imageオブジェクト用配列
+var images = [];
 
-      // canvasCで洋服に対して色を乗算してカラーリング
-      ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-      ctxC.fillRect(0,0,346,570);
-      ctxC.globalCompositeOperation = "source-atop"
-
-      //ここまでカウントしたら描写？
-      loadedCount++;
-
-    }, false); //addEventListenerのストップ？
-  }                   
+for (var i in srcs) {
+  images[i] = new Image();
+  images[i].src = srcs[i];
 }
-)();
+
+var loadedCount = 1;
+for (var i in images) {
+  images[i].addEventListener('load', function() {
+    if (loadedCount == images.length) {
+      for (var j in images) {
+        ctxB.drawImage(images[j], 0, 0, 346, 570);
+      }
+    }
+
+    // canvasBの内容をクローンしてcanvasCに表示する
+    const imageData = ctxB.getImageData(0, 0, 346, 570);
+    ctxC.putImageData(imageData, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
+
+    // canvasCで洋服に対して色を乗算してカラーリング
+    ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
+    ctxC.fillRect(0,0,346,570);
+    ctxC.globalCompositeOperation = "source-atop"
+
+    //ここまでカウントしたら描写？
+    loadedCount++;
+
+  }, false); //addEventListenerのストップ？
+};
+
+// // ここから
+
+//読み込みたい画像のパスの配列の設定
+// var fileArry = [
+//   'img/RC-N014/eri_V-07.png',
+//   'img/RC-N014/kata_SH-01_set-in.png',
+//   'img/RC-N014/kirikae_Just.png',
+//   'img/RC-N014/sode_short-cuffs.png',
+// ]; 
+
+// var numMaterials = fileArry.length; // ①読み込みたい画像の数
+// var loadedCounter = 0; // ②ロード済Imageオブジェクト数のカウンタ
+// var imgObjArry = []; // ③ロード済Imageオブジェクト用配列
+
+// // var canvas = document.getElementById(‘canvasElem’); // Canvas要素
+// // var ctx = canvas.getContext("2d"); // 2dContext
+
+// function loadImges(){
+
+//   var imgObj = new Image(); // 新しい Image オブジェクトを作る
+
+//   imgObj.addEventListener("load", // loadイベントのリッスン
+//   function(){
+//     loadedCounter++; // 画像1枚読み込みにつきインクリメント
+//     imgObjArry.push(imgObj); //読み込み済画像を③に格納
+//     if(numMaterials == loadedCounter){ // ①の数＝②の数ならば描画する
+//     display();
+//     }else{
+//     loadImges(); // すべて読み込まれていなければ次を読込
+//     }
+//   },false);
+
+//   imgObj.src = fileArry[imgObjArry.length]; // ソースのパスを設定
+
+// };
+
+
+
+// ここまで
+
+
+
+
+
 
 
 // 3.ボタンクリックした際に指定色に塗り替える
