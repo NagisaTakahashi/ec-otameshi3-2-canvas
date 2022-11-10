@@ -158,10 +158,33 @@ canvas{
 }
 
 #canvasC { /* 重要！色味の焼き方 */
+  /* mix-blend-mode: multiply; */
+}
+
+#canvasC_eri { /* 重要！色味の焼き方 */
+  /* mix-blend-mode: multiply; */
+}
+
+#canvasC_sode { /* 重要！色味の焼き方 */
+  /* mix-blend-mode: multiply; */
+}
+
+#canvasC_kata { /* 重要！色味の焼き方 */
+  /* mix-blend-mode: multiply; */
+}
+
+#canvasC_kirikae { /* 重要！色味の焼き方 */
+  /* mix-blend-mode: multiply; */
+}
+
+.canvasC_wrapper { /* 重要！色味の焼き方 */
   mix-blend-mode: multiply;
 }
-/* 
 
+
+
+
+/* 
 #canvasA {
 z-index: 1;
 position: absolute;
