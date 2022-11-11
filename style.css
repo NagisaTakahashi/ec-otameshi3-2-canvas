@@ -442,8 +442,9 @@ position: absolute;
   border: 0.5px solid #BEBEBE;
   border-radius: 1vh;
   margin: 0 2vw 0 0;
-  width: 64px;
   position: relative;
+  width: 64px;
+  height: 72px
 }
 
 .thumbnail_p2:hover{
@@ -472,8 +473,12 @@ position: absolute;
   background-color: #E88D80;
   opacity: 80%;
   width: 64px;
+  height: 20px;
   position: absolute;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .name1_p2 p {

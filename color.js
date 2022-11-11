@@ -18,6 +18,6 @@ var color_list= [
 //上記のカラー定義から、カラーのサムネイルと、カラー名表記に代入して画面上で表示
 for( let A = 0 ; A < color_list.length ; A ++ ){
   $(`#color_${color_list[A].colornum}`).css("background-color",`#${color_list[A].color_code}`);
-  $(`#colorname_${color_list[A].colornum}`).text(color_list[A].colorname);
+  $(`#colorname_${color_list[A].colornum}`).html(color_list[A].colorname);
 }
 
