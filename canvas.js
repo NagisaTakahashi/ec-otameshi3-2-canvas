@@ -331,6 +331,7 @@ for (var i in images) {
 // 3.ボタンクリックした際に指定色に塗り替える
 
 
+let B = 2; //あとでAの結果を4.デザイン変更で利用するためにAの受け皿として変数Bを用意しておく（B=2の初期設定は初期設定が色ライムの意図）
 
 for( let A = 0 ; A < color_list.length ; A ++ ){
   $(`#color_${color_list[A].colornum}`).on("click",function(){
@@ -355,12 +356,13 @@ for( let A = 0 ; A < color_list.length ; A ++ ){
     ctxC_kirikae.fillStyle = `rgba(${color_list[A].RGB}, 1)`; 
     ctxC_kirikae.fillRect(0,0,692,1140);
     ctxC_kirikae.globalCompositeOperation = "source-atop"
+
+    B = A; //変数Aを外で使うためにBにAを代入する
   
-    console.log(A);
-    return A;
   });
 };
 
+console.log(B); //Bを書き出しチェック
 
 
 
@@ -395,7 +397,7 @@ for( let D = 0 ; D < design_list_eri.length ; D ++ ){
       ctxC_eri.putImageData(imageData_eri_new, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
       // canvasCで洋服に対して色を乗算してカラーリング
-      ctxC_eri.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
+      ctxC_eri.fillStyle = `rgba(${color_list[B].RGB}, 1)`; //ここにBを入れることによってAの結果をここで使える！！（クリック時に色味が即時反映）
       ctxC_eri.fillRect(0,0,692,1140);
       ctxC_eri.globalCompositeOperation = "source-atop"
 
