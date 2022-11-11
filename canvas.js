@@ -5,8 +5,8 @@
 // キャンバスのサイズ管理
 const canvasInfo = {
   size: { //キャンバスの大きさ
-      width: 346, 
-      height: 570,
+      width: 692, 
+      height: 1140,
   },
 };
 const sizeUnit = "px";
@@ -16,8 +16,8 @@ const image = {
       width: 0,
   },
   size: { //画像の大きさ
-    width: 346,
-    height: 570,
+    width: 692,
+    height: 1140,
   },
 };
 const fillStartPosition = { //塗りが開始する場所
@@ -108,7 +108,7 @@ var imgA_1 = new Image();
 imgA_1.src = "img/160cm.png";
 // 1-2. 画像読み込み終了してから描画
 imgA_1.onload = function(){
-    ctxA.drawImage(imgA_1, 0, 0,346,570);
+    ctxA.drawImage(imgA_1, 0, 0,692,1140);
 };
 
 
@@ -138,17 +138,17 @@ imgA_1.onload = function(){
 //   images[i].addEventListener('load', function() {
 //     if (loadedCount == images.length) {
 //       for (var j in images) {
-//         ctxB.drawImage(images[j], 0, 0, 346, 570);
+//         ctxB.drawImage(images[j], 0, 0, 692, 1140);
 //       }
 //     }
 
 //     // canvasBの内容をクローンしてcanvasCに表示する
-//     const imageData = ctxB.getImageData(0, 0, 346, 570);
+//     const imageData = ctxB.getImageData(0, 0, 692, 1140);
 //     ctxC.putImageData(imageData, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
 //     // canvasCで洋服に対して色を乗算してカラーリング
 //     ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-//     ctxC.fillRect(0,0,346,570);
+//     ctxC.fillRect(0,0,692,1140);
 //     ctxC.globalCompositeOperation = "source-atop"
 
 //     //ここまでカウントしたら描写？
@@ -180,43 +180,43 @@ for (var i in images) {
   images[i].addEventListener('load', function() {
     if (loadedCount == images.length) {
       for (var j in images) {
-        ctxB_eri.drawImage(images[0], 0, 0, 346, 570);
-        ctxB_sode.drawImage(images[1], 0, 0, 346, 570);
-        ctxB_kata.drawImage(images[2], 0, 0, 346, 570);
-        ctxB_kirikae.drawImage(images[3], 0, 0, 346, 570);
+        ctxB_eri.drawImage(images[0], 0, 0, 692, 1140);
+        ctxB_sode.drawImage(images[1], 0, 0, 692, 1140);
+        ctxB_kata.drawImage(images[2], 0, 0, 692, 1140);
+        ctxB_kirikae.drawImage(images[3], 0, 0, 692, 1140);
       }
     }
 
     // canvasBの内容をクローンしてcanvasCに表示する
-    const imageData_eri = ctxB_eri.getImageData(0, 0, 346, 570);
+    const imageData_eri = ctxB_eri.getImageData(0, 0, 692, 1140);
     ctxC_eri.putImageData(imageData_eri, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
-    const imageData_sode = ctxB_sode.getImageData(0, 0, 346, 570);
+    const imageData_sode = ctxB_sode.getImageData(0, 0, 692, 1140);
     ctxC_sode.putImageData(imageData_sode, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
-    const imageData_kata = ctxB_kata.getImageData(0, 0, 346, 570);
+    const imageData_kata = ctxB_kata.getImageData(0, 0, 692, 1140);
     ctxC_kata.putImageData(imageData_kata, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
-    const imageData_kirikae = ctxB_kirikae.getImageData(0, 0, 346, 570);
+    const imageData_kirikae = ctxB_kirikae.getImageData(0, 0, 692, 1140);
     ctxC_kirikae.putImageData(imageData_kirikae, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
 
 
     // canvasCで洋服に対して色を乗算してカラーリング
     ctxC_eri.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-    ctxC_eri.fillRect(0,0,346,570);
+    ctxC_eri.fillRect(0,0,692,1140);
     ctxC_eri.globalCompositeOperation = "source-atop"
 
     ctxC_sode.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-    ctxC_sode.fillRect(0,0,346,570);
+    ctxC_sode.fillRect(0,0,692,1140);
     ctxC_sode.globalCompositeOperation = "source-atop"
 
     ctxC_kata.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-    ctxC_kata.fillRect(0,0,346,570);
+    ctxC_kata.fillRect(0,0,692,1140);
     ctxC_kata.globalCompositeOperation = "source-atop"
 
     ctxC_kirikae.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-    ctxC_kirikae.fillRect(0,0,346,570);
+    ctxC_kirikae.fillRect(0,0,692,1140);
     ctxC_kirikae.globalCompositeOperation = "source-atop"
 
 
@@ -236,15 +236,15 @@ for (var i in images) {
 //   img_d_eri.src = `${design_list_eri[3].src}`;
 //   // 画像読み込み終了してから描画
 //   img_d_eri.onload = function(){
-//     ctxB_eri.drawImage(img_d_eri, 0, 0,346,570);
+//     ctxB_eri.drawImage(img_d_eri, 0, 0,692,1140);
 //     //canvasBの内容をクローンしてcanvasCに表示する
-//     const imageData_eri = ctxB_eri.getImageData(0, 0, 346, 570);
+//     const imageData_eri = ctxB_eri.getImageData(0, 0, 692, 1140);
      
 //     ctxC_eri.putImageData(imageData_eri, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
 //     // canvasCで洋服に対して色を乗算してカラーリング
 //     ctxC_eri.fillStyle = `rgba(${color_list[2].RGB}, 0.5)`; //初期設定カラー（適当、あとで変える）
-//     ctxC_eri.fillRect(0,0,346,570);
+//     ctxC_eri.fillRect(0,0,692,1140);
 //     ctxC_eri.globalCompositeOperation = "source-in"
 
 
@@ -256,13 +256,13 @@ for (var i in images) {
 //   img_d_sode.src = `${design_list_sode[1].src}`;
 //   // 画像読み込み終了してから描画
 //   img_d_sode.onload = function(){
-//     ctxB_sode.drawImage(img_d_sode, 0, 0,346,570);
+//     ctxB_sode.drawImage(img_d_sode, 0, 0,692,1140);
 //     // //canvasBの内容をクローンしてcanvasCに表示する
-//     // const imageData_sode = ctxB_sode.getImageData(0, 0, 346, 570);
+//     // const imageData_sode = ctxB_sode.getImageData(0, 0, 692, 1140);
 
 //     //         // canvasCで洋服に対して色を乗算してカラーリング
 //     //         ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-//     //         ctxC.fillRect(0,0,346,570);
+//     //         ctxC.fillRect(0,0,692,1140);
 //     //         ctxC.globalCompositeOperation = "source-atop"
 
 //     // ctxC.putImageData(imageData_sode, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
@@ -275,13 +275,13 @@ for (var i in images) {
 //   img_d_kata.src = `${design_list_kata[0].src}`;
 //   // 画像読み込み終了してから描画
 //   img_d_kata.onload = function(){
-//     ctxB_kata.drawImage(img_d_kata, 0, 0,346,570);
+//     ctxB_kata.drawImage(img_d_kata, 0, 0,692,1140);
 //     // //canvasBの内容をクローンしてcanvasCに表示する
-//     // const imageData_kata = ctxB_kata.getImageData(0, 0, 346, 570);
+//     // const imageData_kata = ctxB_kata.getImageData(0, 0, 692, 1140);
 
 //     //         // canvasCで洋服に対して色を乗算してカラーリング
 //     //         ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-//     //         ctxC.fillRect(0,0,346,570);
+//     //         ctxC.fillRect(0,0,692,1140);
 //     //         ctxC.globalCompositeOperation = "source-atop"
 
 //     // ctxC.putImageData(imageData_kata, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
@@ -294,13 +294,13 @@ for (var i in images) {
   // img_d_kirikae.src = `${design_list_kirikae[1].src}`;
   // // 画像読み込み終了してから描画
   // img_d_kirikae.onload = function(){
-  //   ctxB_kirikae.drawImage(img_d_kirikae, 0, 0,346,570);
+  //   ctxB_kirikae.drawImage(img_d_kirikae, 0, 0,692,1140);
   //   // //canvasBの内容をクローンしてcanvasCに表示する
-  //   // const imageData_kirikae = ctxB_kirikae.getImageData(0, 0, 346, 570);
+  //   // const imageData_kirikae = ctxB_kirikae.getImageData(0, 0, 692, 1140);
 
   //   // // canvasCで洋服に対して色を乗算してカラーリング
   //   // ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-  //   // ctxC.fillRect(0,0,346,570);
+  //   // ctxC.fillRect(0,0,692,1140);
   //   // ctxC.globalCompositeOperation = "source-atop"
 
   //   // ctxC.putImageData(imageData_kirikae, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
@@ -317,7 +317,7 @@ for (var i in images) {
 
 // // canvasCで洋服に対して色を乗算してカラーリング
 //   ctxC.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-//   ctxC.fillRect(0,0,346,570);
+//   ctxC.fillRect(0,0,692,1140);
 //   ctxC.globalCompositeOperation = "source-atop"
 
 
@@ -336,24 +336,24 @@ for( let A = 0 ; A < color_list.length ; A ++ ){
   $(`#color_${color_list[A].colornum}`).on("click",function(){
 
     // clearRectしないと描画内容が新規更新されない。色が上塗りされる。１回クリアする。
-    // ctxC.clearRect(0, 0, 346, 570);
+    // ctxC.clearRect(0, 0, 692, 1140);
     //なぜか色が上書きされない仕組みになった。理由は謎。クリア操作を一旦無効化
 
     //新たに選択したカラーで塗り
     ctxC_eri.fillStyle = `rgba(${color_list[A].RGB}, 1)`; 
-    ctxC_eri.fillRect(0,0,346,570);
+    ctxC_eri.fillRect(0,0,692,1140);
     ctxC_eri.globalCompositeOperation = "source-atop"
 
     ctxC_sode.fillStyle = `rgba(${color_list[A].RGB}, 1)`; 
-    ctxC_sode.fillRect(0,0,346,570);
+    ctxC_sode.fillRect(0,0,692,1140);
     ctxC_sode.globalCompositeOperation = "source-atop"
 
     ctxC_kata.fillStyle = `rgba(${color_list[A].RGB}, 1)`; 
-    ctxC_kata.fillRect(0,0,346,570);
+    ctxC_kata.fillRect(0,0,692,1140);
     ctxC_kata.globalCompositeOperation = "source-atop"
 
     ctxC_kirikae.fillStyle = `rgba(${color_list[A].RGB}, 1)`; 
-    ctxC_kirikae.fillRect(0,0,346,570);
+    ctxC_kirikae.fillRect(0,0,692,1140);
     ctxC_kirikae.globalCompositeOperation = "source-atop"
   
     console.log(A);
@@ -373,8 +373,8 @@ for( let D = 0 ; D < design_list_eri.length ; D ++ ){
     console.log(`${design_list_eri[D].src}`);
 
     // clearRectしないと描画内容が上乗せされるので、毎回１回クリアする。
-    ctxB_eri.clearRect(0, 0, 346, 570);
-    // ctxC_eri.clearRect(0, 0, 346, 570);
+    ctxB_eri.clearRect(0, 0, 692, 1140);
+    // ctxC_eri.clearRect(0, 0, 692, 1140);
 
     //新たに選択したデザインをBに新たに描画
 
@@ -383,7 +383,7 @@ for( let D = 0 ; D < design_list_eri.length ; D ++ ){
     img_d_eri.src = `${design_list_eri[D].src}`;
     // 画像読み込み終了してから描画
     img_d_eri.onload = function(){
-      ctxB_eri.drawImage(img_d_eri, 0, 0,346,570);
+      ctxB_eri.drawImage(img_d_eri, 0, 0,692,1140);
 
 
       //キャンバスCに新たに選択した内容を転送する
@@ -391,12 +391,12 @@ for( let D = 0 ; D < design_list_eri.length ; D ++ ){
       //★ロードしたらに込みにしたらできた！！【要注意ポイント！！】
 
       //canvasBの新しい内容をクローンしてcanvasCに表示する
-      const imageData_eri_new = ctxB_eri.getImageData(0, 0, 346, 570);
+      const imageData_eri_new = ctxB_eri.getImageData(0, 0, 692, 1140);
       ctxC_eri.putImageData(imageData_eri_new, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
 
       // canvasCで洋服に対して色を乗算してカラーリング
       ctxC_eri.fillStyle = `rgba(${color_list[2].RGB}, 1)`; //初期設定カラー（適当、あとで変える）
-      ctxC_eri.fillRect(0,0,346,570);
+      ctxC_eri.fillRect(0,0,692,1140);
       ctxC_eri.globalCompositeOperation = "source-atop"
 
     };
