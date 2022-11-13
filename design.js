@@ -15,23 +15,23 @@ var design_list_eri= [
 ];
 
 var design_list_sode= [
-  {"d_num":"01","d_name":"widecuffs","d_code":"C-01","src":"img/RC-N014/sode_wide-cuffs.png",},
-  {"d_num":"02","d_name":"thincuffs","d_code":"C-02","src":"img/RC-N014/sode_short-cuffs.png",},
-  {"d_num":"03","d_name":"frill","d_code":"C-03","src":"img/RC-N014/sode_furil.png",},
-  {"d_num":"03","d_name":"baloon","d_code":"C-04","src":"img/RC-N014/sode_baloon.png",},
+  {"d_num":"01","d_name":"wide-cuffs","d_code":"C-01","src":"img/RC-N014/sode_wide-cuffs.png",},
+  {"d_num":"02","d_name":"thin-cuffs","d_code":"C-02","src":"img/RC-N014/sode_short-cuffs.png",},
+  {"d_num":"03","d_name":"frill-sleeve","d_code":"C-03","src":"img/RC-N014/sode_frill.png",},
+  {"d_num":"03","d_name":"balloon-sleeve","d_code":"C-04","src":"img/RC-N014/sode_balloon.png",},
 ];
 
 var design_list_kata= [
-  {"d_num":"01","d_name":"aaa","d_code":"SH-01","src":"img/RC-N014/kata_SH-01_set-in.png",},
-  {"d_num":"02","d_name":"aaa","d_code":"SH-02","src":"img/RC-N014/kata_SH-02_puff.png",},
-  {"d_num":"03","d_name":"aaa","d_code":"SH-03","src":"img/RC-N014/kata_SH-03_drop.png",},
+  {"d_num":"01","d_name":"set-in-sleeve","d_code":"SH-01","src":"img/RC-N014/kata_SH-01_set-in.png",},
+  {"d_num":"02","d_name":"puff-sleeve","d_code":"SH-02","src":"img/RC-N014/kata_SH-02_puff.png",},
+  {"d_num":"03","d_name":"drop-shoulder","d_code":"SH-03","src":"img/RC-N014/kata_SH-03_drop.png",},
 ];
 
 var design_list_kirikae= [
-  {"d_num":"01","d_name":"high","d_code":"k-01","src":"img/RC-N014/kirikae_high.png",},
-  {"d_num":"02","d_name":"just","d_code":"k-02","src":"img/RC-N014/kirikae_just.png",},
-  {"d_num":"03","d_name":"low","d_code":"k-03","src":"img/RC-N014/kirikae_low.png",},
-  {"d_num":"04","d_name":"none","d_code":"k-04","src":"img/RC-N014/kirikae_none.png",},
+  {"d_num":"01","d_name":"ハイウエスト切替","d_code":"k-01","src":"img/RC-N014/kirikae_high.png",},
+  {"d_num":"02","d_name":"ジャストウエスト切替","d_code":"k-02","src":"img/RC-N014/kirikae_just.png",},
+  {"d_num":"03","d_name":"ロー切替","d_code":"k-03","src":"img/RC-N014/kirikae_low.png",},
+  {"d_num":"04","d_name":"切替なし","d_code":"k-04","src":"img/RC-N014/kirikae_none.png",},
 ];
 
 

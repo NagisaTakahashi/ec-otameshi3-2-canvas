@@ -73,32 +73,32 @@ var color_list= [
 
 // 4-1.デザインの定義
 var design_list_eri= [
-  {"d_num":"01","d_name":"mockneck","d_code":"MN-01","src":"img/RC-N014/eri_MN-01.png",},
-  {"d_num":"02","d_name":"slitv","d_code":"SV-01","src":"img/RC-N014/eri_SV-01.png",},
-  {"d_num":"03","d_name":"slitv","d_code":"SV-02","src":"img/RC-N014/eri_SV-02.png",},
-  {"d_num":"04","d_name":"vneck","d_code":"V-07","src":"img/RC-N014/eri_V-07.png",},
+  {"d_num":"01","d_name":"モックネック","d_code":"MN-01","src":"img/RC-N014/eri_MN-01.png",},
+  {"d_num":"02","d_name":"バンドカラースリットネック","d_code":"SV-01","src":"img/RC-N014/eri_SV-01.png",},
+  {"d_num":"03","d_name":"キーネック","d_code":"SV-02","src":"img/RC-N014/eri_SV-02.png",},
+  {"d_num":"04","d_name":"ラウンドVネック","d_code":"V-07","src":"img/RC-N014/eri_V-07.png",},
 ];
 
+
 var design_list_sode= [
-  {"d_num":"01","d_name":"widecuffs","d_code":"C-01","src":"img/RC-N014/sode_wide-cuffs.png",},
-  {"d_num":"02","d_name":"thincuffs","d_code":"C-02","src":"img/RC-N014/sode_short-cuffs.png",},
-  {"d_num":"03","d_name":"frill","d_code":"C-03","src":"img/RC-N014/sode_furil.png",},
-  {"d_num":"03","d_name":"baloon","d_code":"C-04","src":"img/RC-N014/sode_baloon.png",},
+  {"d_num":"01","d_name":"wide-cuffs","d_code":"C-01","src":"img/RC-N014/sode_wide-cuffs.png",},
+  {"d_num":"02","d_name":"thin-cuffs","d_code":"C-02","src":"img/RC-N014/sode_short-cuffs.png",},
+  {"d_num":"03","d_name":"frill-sleeve","d_code":"C-03","src":"img/RC-N014/sode_frill.png",},
+  {"d_num":"03","d_name":"balloon-sleeve","d_code":"C-04","src":"img/RC-N014/sode_balloon.png",},
 ];
 
 var design_list_kata= [
-  {"d_num":"01","d_name":"aaa","d_code":"SH-01","src":"img/RC-N014/kata_SH-01_set-in.png",},
-  {"d_num":"02","d_name":"aaa","d_code":"SH-02","src":"img/RC-N014/kata_SH-02_puff.png",},
-  {"d_num":"03","d_name":"aaa","d_code":"SH-03","src":"img/RC-N014/kata_SH-03_drop.png",},
+  {"d_num":"01","d_name":"set-in-sleeve","d_code":"SH-01","src":"img/RC-N014/kata_SH-01_set-in.png",},
+  {"d_num":"02","d_name":"puff-sleeve","d_code":"SH-02","src":"img/RC-N014/kata_SH-02_puff.png",},
+  {"d_num":"03","d_name":"drop-shoulder","d_code":"SH-03","src":"img/RC-N014/kata_SH-03_drop.png",},
 ];
 
 var design_list_kirikae= [
-  {"d_num":"01","d_name":"high","d_code":"k-01","src":"img/RC-N014/kirikae_high.png",},
-  {"d_num":"02","d_name":"just","d_code":"k-02","src":"img/RC-N014/kirikae_just.png",},
-  {"d_num":"03","d_name":"low","d_code":"k-03","src":"img/RC-N014/kirikae_low.png",},
-  {"d_num":"04","d_name":"none","d_code":"k-04","src":"img/RC-N014/kirikae_none.png",},
+  {"d_num":"01","d_name":"ハイウエスト切替","d_code":"k-01","src":"img/RC-N014/kirikae_high.png",},
+  {"d_num":"02","d_name":"ジャストウエスト切替","d_code":"k-02","src":"img/RC-N014/kirikae_just.png",},
+  {"d_num":"03","d_name":"ロー切替","d_code":"k-03","src":"img/RC-N014/kirikae_low.png",},
+  {"d_num":"04","d_name":"切替なし","d_code":"k-04","src":"img/RC-N014/kirikae_none.png",},
 ];
-
 
 
 // 1.canvasA にアバター表示（ゆくゆくはアバターも可変にするために変数に置き換える）
@@ -374,35 +374,27 @@ for( let D = 0 ; D < design_list_eri.length ; D ++ ){
 
     console.log(`${design_list_eri[D].src}`);
 
-    // clearRectしないと描画内容が上乗せされるので、毎回１回クリアする。
+    // ②clearRectしないと描画内容が上乗せされるので、毎回１回クリアする。
     ctxB_eri.clearRect(0, 0, 692, 1140);
-    // ctxC_eri.clearRect(0, 0, 692, 1140);
 
-    //新たに選択したデザインをBに新たに描画
-
-    // Image オブジェクトを生成
+    // ③新たに選択したデザインをBに新たに描画
+    // ③-1. Image オブジェクトを生成
     var img_d_eri = new Image();
     img_d_eri.src = `${design_list_eri[D].src}`;
-    // 画像読み込み終了してから描画
+    // ③-2. 画像読み込み終了してから描画
     img_d_eri.onload = function(){
       ctxB_eri.drawImage(img_d_eri, 0, 0,692,1140);
-
-
-      //キャンバスCに新たに選択した内容を転送する
-
       //★ロードしたらに込みにしたらできた！！【要注意ポイント！！】
 
-      //canvasBの新しい内容をクローンしてcanvasCに表示する
+      //④キャンバスCに新たに選択した内容を転送する
+      //④-1. canvasBの新しい内容をクローンしてcanvasCに表示する
       const imageData_eri_new = ctxB_eri.getImageData(0, 0, 692, 1140);
       ctxC_eri.putImageData(imageData_eri_new, 0, 0); //描画場所（canvasBと重ねるため0,0に固定）
-
-      // canvasCで洋服に対して色を乗算してカラーリング
-      ctxC_eri.fillStyle = `rgba(${color_list[B].RGB}, 1)`; //ここにBを入れることによってAの結果をここで使える！！（クリック時に色味が即時反映）
+      //④-2.  canvasCで洋服に対して色を乗算してカラーリング
+      ctxC_eri.fillStyle = `rgba(${color_list[B].RGB}, 1)`; //ここにBを入れることによってAの結果をここで使える！！（クリック時に色味が即時反映）Bは襟、袖など各パーツ共通で利用
       ctxC_eri.fillRect(0,0,692,1140);
       ctxC_eri.globalCompositeOperation = "source-atop"
-
     };
-
   });
 };
 
